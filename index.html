@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My To-Do App</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div id="notification" class="notification"></div>
+        <div id="confirmBox" class="notification confirm-box">
+            <p id="confirmMessage">Are you sure?</p>
+            <div class="confirm-actions">
+                <button id="confirmYes" class="danger-btn">Delete</button>
+                <button id="confirmNo" class="secondary-btn">Cancel</button>
+            </div>
+        </div>
+
+        <div id="dueNotification" class="due-notification" role="status" aria-live="polite">
+            <span id="dueNotificationMessage"></span>
+            <button id="dismissDueNotification" class="dismiss-due-btn" type="button" aria-label="Dismiss reminder">Dismiss</button>
+        </div>
+
+        <header>
+            <h1>My To-Do List</h1>
+            <p>Organize your tasks and get things done.</p>
+        </header>
+
+        <main>
+            <section class="task-input">
+                <input type="text" id="taskInput" placeholder="What do you need to do?" aria-label="Task name">
+                <select id="categoryInput" aria-label="Task category">
+                    <option value="">Category</option>
+                    <option value="school">School</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="other">Others</option>
+                </select>
+
+                <select id="priorityInput" aria-label="Task priority">
+                    <option value="">Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <input type="date" id="dateInput" aria-label="Due date">
+
+                <button id="addTaskBtn">Add</button>
+            </section>
+
+            <section class="task-section">
+                <div class="task-section-header">
+                    <h2>My Tasks</h2>
+                    <div class="task-stats" id="taskStats">0 tasks</div>
+                </div>
+
+                <button id="clearCompletedBtn" class="secondary-btn clear-btn">Clear completed</button>
+
+                <ul id="taskList">
+                    <li class="empty-state">No tasks yet. Add your first one above.</li>
+                </ul>
+            </section>
+
+            <div id="editBox" class="notification edit-box">
+                <h3>Edit Your Task ✏️</h3>
+
+                <input type="text" id="editName" placeholder="Task name">
+
+                <select id="editCategory">
+                    <option value="">Category</option>
+                    <option value="school">School</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="other">Others</option>
+                </select>
+
+                <select id="editPriority">
+                    <option value="">Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <input type="date" id="editDate">
+
+                <div class="edit-actions">
+                    <button id="saveEdit">Save Changes</button>
+                    <button id="cancelEdit" class="secondary-btn">Cancel</button>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
